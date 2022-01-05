@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SETTINGS</title>
+	<meta charset="utf-8">
+	<script src="javaScript/main.js"></script>
+	<link rel="icon" type="image/png" href="image/EPSI_PONG_Logo2.png"/>
+</head>
+<body>
+
+<section>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</section>
+
+<div class="wrap">
+	<div class="p1">
+		<h1 class="neonText1">Player 1</h1>
+		<input type="text" id="pseudo_player1" placeholder="Pseudo">
+		<h2>Clavier touche du haut : Z</h2>
+		<h2>Clavier touche du bas : S</h2><br><br>
+        <h2>Manette touche du haut : L1</h2>
+        <h2>Manette touche du bas : R1</h2>		
+	</div>
+	<div class="p2">
+		<h1 class="neonText2">Player 2 </h1>
+		<input type="text" id="pseudo_player2" placeholder="Pseudo">
+		<h2>Clavier touche du haut : P</h2>
+		<h2>Clavier touche du bas : M</h2><br><br>
+        <h2>Manette touche du haut : L2</h2>
+        <h2>Manette touche du bas : R2</h2>	
+	</div>
+	<div class="p3">
+		<h1 class="score" id="neonText4">Score MAX </h1>
+		<input type="number" name="score" min="1" max="100" id="score_id" placeholder="Score MAX">
+	</div>
+	<div class="button" id="p4">
+		<p class="p" onclick="setData()">CONFIRMER</p>
+		<a href="index.html">MENU</a>
+	</div>
+</div>
+
+
+
+
+
+
+
+<style type="text/css">
+
+#neonText4 {
+    animation: flicker4 2s infinite 
+
+}
+
+@keyframes flicker4 {
+
+0%, 20%, 22%, 25%, 53%, 57%, 80%, 100% {
+
+    text-shadow:
+    0 0 1px #fff,
+    0 0 3px #fff,
+    0 0 5px #fff,
+    0 0 15px #008cff,
+    0 0 20px #008cff,
+    0 0 25px #008cff,
+    0 0 15px #008cff,
+    0 0 10px #008cff;
+
+}
+
+20%, 24%, 55% {        
+    text-shadow: none;
+}    
+}
+
+section{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+}
+
+span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.1),
+    0 0 0 8px rgba(255,255,255,0.1),
+    0 0 10px rgba(255,255,255,1);
+    animation: animate 3s linear infinite;
+    z-index: 1;
+}
+
+span::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(90deg, white,
+    transparent);
+    z-index: 1;
+}
+
+@keyframes animate {
+    0%{
+        transform: rotate(315deg) translateX(0);
+        opacity: 1;
+        z-index: 1;
+    }
+    70%{
+        opacity: 1;
+        z-index: 1;
+    }
+
+    100%{
+        transform: rotate(315deg) translateX(-1000px);
+        opacity: 0;
+        z-index: 1;
+    }               
+}
+span:nth-child(1){
+    top: 0;
+    right: 0;
+    left: initial;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    z-index: 1;
+}
+
+span:nth-child(2){
+    top: 0;
+    right: 80px;
+    left: initial;
+    animation-delay: -0.2s;
+    animation-duration: 3s;
+    z-index: 1;
+}
+
+span:nth-child(3){
+    top: 80px;
+    right: 0px;
+    left: initial;
+    animation-delay: 0.4s;
+    animation-duration: 2s;
+    z-index: 1;
+}
+
+span:nth-child(4){
+    top: 0px;
+    right: 180px;
+    left: initial;
+    animation-delay: 0.6s;
+    animation-duration: 1.5s;
+    z-index: 1;
+}
+
+span:nth-child(5){
+    top: 0px;
+    right: 400px;
+    left: initial;
+    animation-delay: 0.8s;
+    animation-duration: 2.5s;
+    z-index: 1;
+}
+
+span:nth-child(6){
+    top: 0px;
+    right: 600px;
+    left: initial;
+    animation-delay: 1s;
+    animation-duration: 3s;
+    z-index: 1;
+}
+span:nth-child(7){
+    top: 0px;
+    right: 1000px;
+    left: initial;
+    animation-delay: 0.5s;
+    animation-duration: 2s;
+    z-index: 1;
+}
+
+span:nth-child(8){
+    top: 0px;
+    right: 900px;
+    left: initial;
+    animation-delay: 0.1s;
+    animation-duration: 5s;
+    z-index: 1;
+}
+span:nth-child(9){
+    top: -50px;
+    right: 900px;
+    left: initial;
+    animation-delay: 0.1s;
+    animation-duration: 5s;
+    z-index: 1;
+}
+
+
+
+.neonText1 {
+    animation: flicker 2s infinite 
+
+}
+
+@keyframes flicker {
+
+0%, 20%, 22%, 25%, 53%, 57%, 80%, 100% {
+
+    text-shadow:
+    0 0 1px blue,
+    0 0 3px blue,
+    0 0 5px blue,
+    0 0 15px blue,
+    0 0 20px blue,
+    0 0 25px blue,
+    0 0 15px blue,
+    0 0 10px blue;
+
+}
+
+20%, 24%, 55% {        
+    text-shadow: none;
+}    
+}
+
+
+
+
+.neonText2 {
+    animation: flicker2 2s infinite 
+
+}
+
+@keyframes flicker2 {
+
+0%, 20%, 22%, 25%, 53%, 57%, 80%, 100% {
+
+    text-shadow:
+    0 0 1px red,
+    0 0 3px red,
+    0 0 5px red,
+    0 0 15px red,
+    0 0 20px red,
+    0 0 25px red,
+    0 0 15px red,
+    0 0 10px red;
+
+}
+
+20%, 24%, 55% {        
+    text-shadow: none;
+}    
+}
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+
+}
+
+body{
+	background-color: #181616;
+	overflow-x: hidden;
+}
+
+.wrap {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1250px;
+	height: 800px;
+	display: grid;
+	padding: 20px;
+	grid-template-columns: repeat(2, 2fr);
+	grid-auto-rows: minmax(100px, auto);		
+}
+
+.p1{
+	grid-column: 1/2;
+	grid-row: 1;
+	width: 600px;
+	height: 450px;
+	left: 20px;
+	color: white;
+	background-color:  #181616 ;
+	text-align: center;
+	border-radius: 10px;
+	box-shadow:
+		0 0 8px #fff,
+		inset 0 0 8px #fff,
+		0 0 16px blue,
+		inset 0 0 10px blue,
+		0 0 32px blue,
+		inset 0 0 25px blue;
+	border-radius: 10px;
+}
+
+.p1 h1{
+	color: blue;
+}
+
+.p2 h1{
+	color: red;
+}
+
+.p2{
+	grid-column: 2/2
+	grid-row: 1;
+	width: 600px;
+	right: 20px;
+	height: 450px;
+	text-align: center;
+	color: white;
+	background-color:  #181616 ;
+	border-radius: 10px;
+	box-shadow:
+		0 0 8px #fff,
+		inset 0 0 8px #fff,
+		0 0 16px red,
+		inset 0 0 10px red,
+		0 0 32px red,
+		inset 0 0 25px red;
+}
+
+.p3{
+	grid-column: 1/2;
+    margin-top: 100px;
+	grid-row: 2;
+	width: 600px;
+	height: 300px;
+	left: 20px;
+	color: white;
+	background-color:  #181616 ;
+	text-align: center;
+	border-radius: 10px;
+	box-shadow:
+		0 0 8px #fff,
+		inset 0 0 8px #fff,
+		0 0 16px #008cff,
+		inset 0 0 10px #008cff,
+		0 0 32px #008cff,
+		inset 0 0 25px #008cff;
+	border-radius: 10px;	
+}
+
+#p4{
+    margin-left: -20px;
+    margin-top: 100px;
+	grid-column: 2/2;
+	top: -1px;
+	grid-row: 2;
+	width: 600px;
+	height: 300px;
+	left: 20px;
+	color: white;
+	background-color:  #181616 ;
+	text-align: center;
+	border-radius: 10px;
+	box-shadow:
+		0 0 8px #fff,
+		inset 0 0 8px #fff,
+		0 0 16px #008cff,
+		inset 0 0 10px #008cff,
+		0 0 32px #008cff,
+		inset 0 0 25px #008cff;
+	border-radius: 10px;	
+}
+
+h1{
+	position: relative;
+	text-align: center;
+	font-size: 40px;
+	top: 20px;
+	font-family: sans-serif;
+}
+
+p{
+	position: relative;
+    border: solid 3px;
+    border-radius: 10px;
+    height: 80px;
+    margin-left: 25%;
+    margin-right: 25%;
+    display: flex;
+    margin-top: 15px;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    font-family: sans-serif;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    top: 20px;
+              
+}
+
+p:hover{
+    color: #008cff;
+    box-shadow:
+    0 0 8px #fff,
+    inset 0 0 8px #fff,
+    0 0 16px #008cff,
+    inset 0 0 10px #008cff,
+    0 0 32px #008cff,
+    inset 0 0 25px #008cff;
+
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+
+a:hover{
+	color:#008cff; 
+}
+
+
+
+input{
+	position: relative;
+	top: 50px;
+	display: block;
+	text-align: center;
+	align-items: center;
+	background: none;
+	border: 3px solid white;
+	width: 400px;
+	height: 50px;
+	left: 100px;
+	color: white;
+	font-size: 20px;
+	font-family: sans-serif;
+	border-radius: 10px;	
+}
+
+
+.p1 input:hover{
+	border: 3px solid blue;
+	color: blue;
+    box-shadow:
+        0 0 8px #fff,
+        inset 0 0 8px #fff,
+        0 0 16px blue,
+        inset 0 0 10px blue,
+        0 0 32px blue,
+        inset 0 0 25px blue;
+}
+
+.p2 input:hover{
+	border: 3px solid red;
+	color: red;
+    box-shadow:
+        0 0 8px #fff,
+        inset 0 0 8px #fff,
+        0 0 16px red,
+        inset 0 0 10px red,
+        0 0 32px red,
+        inset 0 0 25px red;
+}
+
+
+.p3 input:hover{
+	border: 3px solid #008cff;
+	color: #008cff;
+    box-shadow:
+        0 0 8px #fff,
+        inset 0 0 8px #fff,
+        0 0 16px #008cff,
+        inset 0 0 10px #008cff,
+        0 0 32px #008cff,
+        inset 0 0 25px #008cff;
+}
+
+.button{
+	position: relative;
+	top: 10px;
+}
+
+h2{
+	position: relative;
+	top: 100px;
+	padding: 5px;
+	font-family: sans-serif;
+}
+
+.button a{
+	position: relative;
+	top: 30px;
+    border: solid 3px;
+    border-radius: 10px;
+    height: 90px;
+    margin-left: 25%;
+    margin-right: 25%;
+    display: flex;
+    margin-top: 15px;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    font-family: sans-serif;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+              
+}
+
+.button a:hover{
+    color: #008cff;
+	box-shadow:
+	0 0 8px #fff,
+	inset 0 0 8px #fff,
+	0 0 16px #008cff,
+	inset 0 0 10px #008cff,
+	0 0 32px #008cff,
+	inset 0 0 25px #008cff;
+
+}
+
+
+    
+</style>
+
+
+</body>
+</html>
